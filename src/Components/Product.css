@@ -1,12 +1,21 @@
 .product {
     width: 300px;
+    padding: 15px 18px;
+    border: 1px solid black;
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 15px 18px;
-    border: 1px solid black;
-    text-align: center;
+}
+
+.product-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-decoration: none;
 }
 
 .img-container {

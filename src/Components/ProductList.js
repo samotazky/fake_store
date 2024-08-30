@@ -1,14 +1,16 @@
-import Product from './Product'; // Uistite sa, že cesta je správna
-import { useState, useEffect } from 'react';
+import Product from "./Product"
+import { useState, useEffect } from "react"
+import { useCart } from "../Context/CartContext"
 
 const ProductList = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([])
+  const { addToCart } = useCart()
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then(res => res.json())
       .then(data => setProducts(data));
-  }, []);
+  }, [])
 
   return (
     <section className="products">
@@ -21,6 +23,7 @@ const ProductList = () => {
           title={product.title}
           price={product.price}
           category={product.category}
+          onAddToCart={() => addToCart(product)} // Predaj addToCart funkciu do Product komponentu
         />
       ))}
     </section>

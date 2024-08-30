@@ -1,0 +1,39 @@
+.cart {
+    position: relative;
+}
+
+.cart-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: absolute;
+    right: 0;
+    width: 300px;
+    background-color: blueviolet;
+    padding: 10px 8px;
+}
+
+.none {
+    display: none;
+    padding: 0;
+}
+
+.btn-cart, .btn-delete {
+    border: none;
+    background-color: transparent;
+    font-size: 25px;
+    cursor: pointer;
+    transition: color .3s;
+}
+
+.btn-cart {
+    color: white;
+}
+
+.btn-cart.green {
+    color: #50d691;
+}
+
+.btn-cart.red {
+    color: #d65050;
+}

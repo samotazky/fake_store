@@ -2,10 +2,10 @@ import "./Header.css"
 import Cart from "./Cart"
 
 const Header = () => {
-    return <div>
+    return <header>
         <h1>Header</h1>
         <Cart />
-    </div>
+    </header>
 }
 
 export default Header
