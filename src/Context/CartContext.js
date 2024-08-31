@@ -3,9 +3,16 @@ import { createContext, useState, useEffect, useContext } from "react"
 const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
+    const [products, setProducts] = useState([])
     const [cartItems, setCartItems] = useState([])
     const [cartIconGreen, setCartIconGreen] = useState(false)
     const [cartIconRed, setCartIconRed] = useState(false)
+
+    useEffect(() => {
+        fetch('https://fakestoreapi.com/products')
+          .then(res => res.json())
+          .then(data => setProducts(data));
+      }, [])
 
     const addToCart = (item) => {
         setCartItems((prevItems) => [...prevItems, item])
@@ -18,7 +25,7 @@ export const CartProvider = ({ children }) => {
                 setCartIconGreen(false)
             }, 700)
         }
-    }, [cartIconGreen])
+    }, [cartIconGreen]) 
 
     //ZABEZPEČIŤ ABY SA NEVYMAZÁVALI ITEMY S ROVNAKYM ID ALE INDEXOM V POLI
     const removeFromCart = (id) => {
@@ -36,7 +43,7 @@ export const CartProvider = ({ children }) => {
     }, [cartIconRed])
 
     return (
-        <CartContext.Provider value={{ cartItems, cartIconGreen, cartIconRed, addToCart, removeFromCart }}>
+        <CartContext.Provider value={{ products, cartItems, cartIconGreen, cartIconRed, addToCart, removeFromCart }}>
             {children}
         </CartContext.Provider>
     )

@@ -12,6 +12,10 @@ const Cart = () => {
     setIsCartVisible(prevVisibility => !prevVisibility)
   }
 
+  const getTotalPrice = () => {
+    return cartItems.reduce((total, item) => total + item.price, 0)
+  }
+
   return <div className="cart">
     <button
       className={`btn-cart ${cartIconGreen ? "green" : ""} ${cartIconRed ? "red" : ""}`}
@@ -37,6 +41,9 @@ const Cart = () => {
                 </div>
               ))
             }
+            <div className="total-price">
+              <p>{getTotalPrice()} €</p>
+            </div>
             <button>Objednať</button>
           </>
         )}
