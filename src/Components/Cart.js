@@ -25,7 +25,7 @@ const Cart = () => {
     {isCartVisible && (
       <div className="cart-details">
         {cartItems.length === 0 ? (
-          <p>Your cart is empty</p>
+          <p>Your cart is empty.</p>
         ) : (
           <>
             {

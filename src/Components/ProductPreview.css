@@ -1,20 +1,19 @@
 .product {
-    width: 300px;
-    padding: 15px 18px;
-    border: 1px solid black;
-    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    max-width: clamp(300px, 320px, 350px);
+    padding: 18px 18px;
+    border: 1px solid black;
+    text-align: center;
 }
 
 .product-link {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     color: black;
+    align-items: center;
+    justify-content: center ;
     text-decoration: none;
 }
 
@@ -22,22 +21,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
+    margin-bottom: 12px;
 }
 
-img {
-    max-height: 160px;
+.preview-img {
+    max-height: 180px;
 }
-
-.product-info {
-    display: none;
+.product-category {
+    color: rgb(74, 74, 74);
     font-size: 14px;
-    background-color: #D9D9D9;
-    padding: 5px 5px;
-    bottom: 0;
 }
 
 .to-cart {
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,7 +44,6 @@ img {
 }
 
 .btn-to-cart{
-    text-align: center;
     background-color: transparent;
     border: none;
     color: #fff;

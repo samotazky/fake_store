@@ -2,7 +2,7 @@ import "./Home.css"
 import ProductList from "../Components/ProductList";
 
 const Home = () => {
-    return <div>
+    return <div className="home-page">
         <ProductList />
     </div>
 }

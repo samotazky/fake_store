@@ -6,7 +6,6 @@ header {
     background-color: transparent;
     transition: all .3s;
     padding: 10px 30px;
-    margin-bottom: 50px;
 }
 
 header:hover, 
@@ -19,27 +18,6 @@ header:focus h1,
 header:hover .btn-category, 
 header:focus .btn-category {
     color: #fff;
-}
-
-.btn-category {
-    position: relative;
-    border: none;
-    background-color: transparent;
-}
-
-.btn-category:before {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    background-color: #fff;
-    width: 0%;
-    height: 3px;
-    transition: width .4s;
-}
-
-.btn-category:hover:before {
-    width: 100%;
 }
 
 /* .btn-cart */

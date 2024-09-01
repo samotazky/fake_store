@@ -1,13 +1,14 @@
-import Product from "./Product"
+import "./ProductList.css"
+import ProductPreview from "./ProductPreview"
 import { useCart } from "../Context/CartContext"
 
 const ProductList = () => {
   const { addToCart, products } = useCart()
 
   return (
-    <section className="products">
+    <section className="products-container">
       {products.map(product => (
-        <Product
+        <ProductPreview
           key={product.id}
           id={product.id}
           image={product.image}
