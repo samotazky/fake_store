@@ -1,8 +1,8 @@
 import { useCart } from "../Context/CartContext"
-import { FaCartShopping, FaTrashCan } from "react-icons/fa6";
+import { FaCartShopping, FaTrashCan } from "react-icons/fa6"
 
 import "./Cart.css"
-import { useState } from "react";
+import { useState } from "react"
 
 const Cart = () => {
   const { cartItems, removeFromCart, cartIconGreen, cartIconRed } = useCart()

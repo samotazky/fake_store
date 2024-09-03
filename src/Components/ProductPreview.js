@@ -1,5 +1,5 @@
-import './ProductPreview.css';
-import { Link } from 'react-router-dom';
+import "./ProductPreview.css"
+import { Link } from "react-router-dom"
 
 const ProductPreview = ({ id, title, price, description, category, image, onAddToCart }) => {
 
@@ -20,7 +20,7 @@ const ProductPreview = ({ id, title, price, description, category, image, onAddT
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProductPreview;
+export default ProductPreview

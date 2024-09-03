@@ -9,10 +9,12 @@ export const CartProvider = ({ children }) => {
     const [cartIconRed, setCartIconRed] = useState(false)
 
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
-          .then(res => res.json())
-          .then(data => setProducts(data));
-      }, [])
+        fetch("https://fakestoreapi.com/products")
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }, [])
+
+    const categories = [...new Set(products.map(product => product.category))]
 
     const addToCart = (item) => {
         setCartItems((prevItems) => [...prevItems, item])
@@ -25,25 +27,25 @@ export const CartProvider = ({ children }) => {
                 setCartIconGreen(false)
             }, 700)
         }
-    }, [cartIconGreen]) 
+    }, [cartIconGreen])
 
     //ZABEZPEČIŤ ABY SA NEVYMAZÁVALI ITEMY S ROVNAKYM ID ALE INDEXOM V POLI
     const removeFromCart = (id) => {
         setCartItems((prevItems) => prevItems.filter(item => item.id !== id))
         setCartIconRed(true)
-    };
+    }
 
     useEffect(() => {
         if (cartIconRed) {
-           setTimeout(() => {
+            setTimeout(() => {
                 setCartIconRed(false)
             }, 700)
-            
+
         }
     }, [cartIconRed])
 
     return (
-        <CartContext.Provider value={{ products, cartItems, cartIconGreen, cartIconRed, addToCart, removeFromCart }}>
+        <CartContext.Provider value={{ products, cartItems, cartIconGreen, cartIconRed, categories, addToCart, removeFromCart }}>
             {children}
         </CartContext.Provider>
     )

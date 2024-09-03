@@ -12,8 +12,8 @@ const ProductsDetails = () => {
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${id}`)
       .then(res => res.json())
-      .then(data => setProduct(data));
-  }, [id]);
+      .then(data => setProduct(data))
+  }, [id])
 
   return <div className="details-page">
     <ProductDetails
