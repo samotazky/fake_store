@@ -1,5 +1,6 @@
 import "./ProductList.css"
 import ProductPreview from "./ProductPreview"
+import ScrollToTopBtn from "./ScrollToTopBtn"
 import { useCart } from "../Context/CartContext"
 
 const ProductList = ({ selectedCategory }) => {
@@ -9,8 +10,7 @@ const ProductList = ({ selectedCategory }) => {
   ? products.filter(product => product.category === selectedCategory)
   : products
 
-  return (
-    <section className="products-container">
+  return <section className="products-container">
       {filteredProducts.map(product => (
         <ProductPreview
           key={product.id}
@@ -23,8 +23,9 @@ const ProductList = ({ selectedCategory }) => {
           onAddToCart={() => addToCart(product)}
         />
       ))}
+      <ScrollToTopBtn />
     </section>
-  )
+  
 }
 
 export default ProductList

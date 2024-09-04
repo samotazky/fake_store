@@ -12,9 +12,9 @@ const ProductPreview = ({ id, title, price, description, category, image, onAddT
 
         <p className="product-category">{category}</p>
         <h4>{title}</h4>
-        <p className="product-price">{price}€</p>
       </Link>
-      <div className="btn-container">
+      <div className="price-to-cart-container">
+          <p className="product-price">{price}€</p>
         <div className="to-cart">
           <button className="btn-to-cart" onClick={onAddToCart}>+</button>
         </div>

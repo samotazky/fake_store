@@ -1,4 +1,8 @@
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -6,6 +10,7 @@ header {
     background-color: transparent;
     transition: all .3s;
     padding: 10px 30px;
+    background-color: #fff;
 }
 
 header:hover, 
@@ -13,16 +18,17 @@ header:focus {
     background-color: black;
 }
 
+/* .btn-cart */
 header:hover h1, 
 header:focus h1,
-header:hover .btn-category, 
-header:focus .btn-category {
-    color: #fff;
-}
-
-/* .btn-cart */
 header:hover .btn-cart, 
-header:focus .btn-cart {
+header:focus .btn-cart,
+header:hover .btn-category, 
+header:focus .btn-category,
+header:hover .btn-filter, 
+header:focus.btn-filter,
+header:hover .btn-filter-close,
+header:focus .btn-filter-close {
     color: #fff;
 }
 

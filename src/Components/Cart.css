@@ -34,3 +34,38 @@
 .btn-cart.red {
     color: #ff0000;
 }
+
+.cart-item {
+    display: grid;
+    grid-template-areas: "title title price"
+                         "title title price"
+                         "delete   .    .  ";
+    margin-bottom: 10px;
+}
+
+.cart-item:last-child {
+    margin-bottom: 0px;
+}
+
+.cart-item-title {
+    grid-area: title;
+}
+
+.cart-item-price {
+    grid-area: price;
+}
+
+.btn-delete {
+    margin-top: 8px;
+    grid-area: delete;
+}
+
+.btn-delete:hover,
+.btn-delete:focus {
+    color: #ff0000;
+}
+
+.total-price {
+    float: right;
+    font-weight: 700;
+}

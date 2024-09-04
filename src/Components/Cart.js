@@ -31,8 +31,8 @@ const Cart = () => {
             {
               cartItems.map((item, id) => (
                 <div key={id} className="cart-item">
-                  <p>{item.title}</p>
-                  <span>{item.price}€</span>
+                  <p className="cart-item-title">{item.title}</p>
+                  <span className="cart-item-price">{item.price}€</span>
                   <button
                     className="btn-delete"
                     onClick={() => removeFromCart(item.id)}>
@@ -41,8 +41,8 @@ const Cart = () => {
                 </div>
               ))
             }
-            <div className="total-price">
-              <p>{getTotalPrice()} €</p>
+            <div>
+              <h3 className="total-price">{getTotalPrice()} €</h3>
             </div>
             <button>Objednať</button>
           </>
