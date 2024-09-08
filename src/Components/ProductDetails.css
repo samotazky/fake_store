@@ -3,7 +3,7 @@
     flex-direction: row;
     gap: 10%;
     justify-content: center;
-    align-items: center;
+    align-items: first center;
 }
 
 .details-img {
@@ -12,7 +12,7 @@
 }
 
 .details-text {
-    max-width: 30%;
+    max-width: 40%;
 }
 
 .details-title {

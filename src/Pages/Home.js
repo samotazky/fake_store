@@ -1,9 +1,10 @@
 import "./Home.css"
 import ProductList from "../Components/ProductList"
-
-const Home = ({selectedCategory}) => {
+import ImagesSlider from "../Components/ImagesSlider"
+const Home = ({ selectedCategory }) => {
     return <div className="home-page">
-        <ProductList selectedCategory={selectedCategory}/>
+        <ImagesSlider />
+        <ProductList selectedCategory={selectedCategory} />
     </div>
 }
 
