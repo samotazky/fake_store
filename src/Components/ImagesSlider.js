@@ -16,7 +16,7 @@ const ImagesSlider = () => {
     useEffect(() => {
         let setIntervalId = setInterval(() => {
             setIndex(index + 1)
-        }, 5000)
+        }, 2500)
         console.log(index);
         return () => clearInterval(setIntervalId)
     }, [index])
@@ -30,10 +30,6 @@ const ImagesSlider = () => {
 
                     if (imageIndex === index) {
                         mainClass = "active-slide"
-                    }
-
-                    if (imageIndex === index - 1 || (index === 0 && imageIndex === dataSlider.length - 1)) {
-                        mainClass = "last-slide"
                     }
 
                     return <article key={id} className={mainClass}>
