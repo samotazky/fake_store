@@ -17,7 +17,6 @@ const ImagesSlider = () => {
         let setIntervalId = setInterval(() => {
             setIndex(index + 1)
         }, 2500)
-        console.log(index);
         return () => clearInterval(setIntervalId)
     }, [index])
 
@@ -38,7 +37,8 @@ const ImagesSlider = () => {
                 })
             }
             <div className="slider-text">
-                <h1>Welcome to our store</h1>
+                <h1>NEW SEASON ARRIVALS</h1>
+                <h2>CHECK OUT ALL THE TRENDS</h2>
             </div>
         </div>}
 

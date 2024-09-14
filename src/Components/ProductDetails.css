@@ -3,7 +3,7 @@
     flex-direction: row;
     gap: 10%;
     justify-content: center;
-    align-items: first center;
+    align-items: center;
 }
 
 .details-img {
@@ -12,7 +12,7 @@
 }
 
 .details-text {
-    max-width: 40%;
+    width: 40%;
 }
 
 .details-title {
@@ -49,3 +49,30 @@
 .btn-details-to-cart:hover {
     background-color: #50d691;
 }
+
+
+@media only screen and (max-width: 550px) {
+    .details {
+        flex-direction: column;
+        margin: 80px 0;
+        gap: 50px;
+    }
+
+    .details-img {
+        width: 250px;
+        height: auto;
+    }
+
+    .details-text {
+        width: 300px;
+    }
+
+    .details-price-btn {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        background-color: #fff;
+        width: 100vw;
+        padding: 10px 25px;
+    }
+  }

@@ -1,5 +1,6 @@
 import { useCart } from "../Context/CartContext"
-import { FaCartShopping, FaTrashCan } from "react-icons/fa6"
+import { FaCartShopping } from "react-icons/fa6"
+import { RxCross1 } from "react-icons/rx";
 
 import "./Cart.css"
 import { useState } from "react"
@@ -13,7 +14,8 @@ const Cart = () => {
   }
 
   const getTotalPrice = () => {
-    return cartItems.reduce((total, item) => total + item.price, 0)
+    const total = cartItems.reduce((total, item) => total + item.price, 0)
+    return total.toFixed(2);
   }
 
   return <div className="cart">
@@ -22,12 +24,59 @@ const Cart = () => {
       onClick={toggleCartVisibility}>
       <FaCartShopping />
     </button>
+
     {isCartVisible && (
       <div className="cart-details">
+        <div className="cart-header-close">
+          <h1>Cart ({cartItems.length})</h1>
+          <button className="cart-close" onClick={toggleCartVisibility}><RxCross1 /></button>
+        </div>
+
+        <div className="cart-items">
+          {
+            cartItems.map((item, index) => {
+              const { id, title, price, image } = item
+
+              return (
+                <div key={index} className="cart-item">
+                  <img className="item-img" src={image} alt={title} />
+
+                  <div className="item-content">
+                    <h3 className="item-title">{title}</h3>
+                    <p>{price} €</p>
+                  </div>
+                  <button
+                    className="btn-delete"
+                    onClick={() => removeFromCart(id)}>
+                    <RxCross1 />
+                  </button>
+                </div>
+              )
+            })
+          }
+        </div>
+
+        <div className="buy-total-price">
+          <h3 className="total-price">{getTotalPrice()} €</h3>
+          <button className="btn-buy">BUY</button>
+        </div>
+      </div>
+    )}
+
+
+
+
+    {/* {isCartVisible && (
+      <div className="cart-details">
         {cartItems.length === 0 ? (
-          <p>Your cart is empty.</p>
+          <div>
+            <button onClick={toggleCartVisibility}><RxCross1 /></button>
+            <p>Your cart is empty.</p>
+          </div>
         ) : (
           <>
+            <button className="cart-close" onClick={toggleCartVisibility}><RxCross1 /></button>
+
             {
               cartItems.map((item, id) => (
                 <div key={id} className="cart-item">
@@ -48,7 +97,7 @@ const Cart = () => {
           </>
         )}
       </div>
-    )}
+    )} */}
   </div >
 }
 

@@ -13,23 +13,31 @@ header {
     background-color: #fff;
     z-index: 100;
 }
-
+/* 
 header:hover, 
 header:focus {
     background-color: black;
 }
 
-/* .btn-cart */
+
 header:hover h1, 
 header:focus h1,
 header:hover .btn-cart, 
 header:focus .btn-cart,
-header:hover .btn-category, 
-header:focus .btn-category,
 header:hover .btn-filter, 
 header:focus.btn-filter,
+header:hover .btn-categories,
+header:focus .btn-categories,
 header:hover .btn-filter-close,
 header:focus .btn-filter-close {
     color: #fff;
 }
 
+@media only screen and (max-width: 840px) {
+    header:hover .btn-categories,
+    header:focus .btn-categories,
+    header:hover .btn-filter-close,
+    header:focus .btn-filter-close {
+        color: inherit;
+    }
+} */

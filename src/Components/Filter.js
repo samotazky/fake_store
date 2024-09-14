@@ -1,15 +1,28 @@
 import "./Filter.css"
 import { useCart } from "../Context/CartContext"
-import { FaFilterCircleXmark } from "react-icons/fa6"
-const Filter = ({ onFilter }) => {
+import { useState } from "react"
+import { FaFilterCircleXmark, FaFilter } from "react-icons/fa6"
 
+const Filter = ({ onFilter }) => {
+    const [filterVisible, setFilterVisible] = useState(true)
     const { categories } = useCart()
 
+    const toggleFilterVisibility = () => {
+        setFilterVisible(prevVisibility => !prevVisibility)
+    }
+
     return <div className="filter">
-        {categories.map((oneCategory, index) => (
-            <button className="btn-filter" key={index} onClick={() => onFilter(oneCategory)}>{oneCategory}</button>
-        ))}
-        <button className="btn-filter-close" onClick={() => onFilter(null)}><FaFilterCircleXmark /></button>
+        <button className="btn-filter" onClick={toggleFilterVisibility}><FaFilter /></button>
+        {filterVisible && (
+            <ul className="filter-list">
+                {categories.map((oneCategory, index) => (
+                    <li key={index}>
+                        <button className="btn-categories" onClick={() => onFilter(oneCategory)}>{oneCategory}</button>
+                    </li>
+                ))}
+                <li><button className="btn-filter-close" onClick={() => onFilter(null)}><FaFilterCircleXmark /></button></li>
+            </ul>
+        )}
     </div>
 }
 
